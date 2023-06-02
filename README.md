@@ -1,8 +1,6 @@
 # Welcome!
 Hello and Welcome!  
 
-RavioliMavioli's commission and portofolio website is created by using pure HTML, CSS, and JavaScript without any framework. It is developed by me with my self-learning knowledge of programming.
-
 Feel free to clone, edit, or redistribute the code under the GPL license.  
 
 Thank you for visiting!
