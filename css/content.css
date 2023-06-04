@@ -16,6 +16,72 @@ body{
 
 /*---------------------------------------------------------------------------------------------------*/
 /*===================================================================================================*/
+
+.popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    place-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-in-out opacity;
+}
+.popup-content {
+    width: clamp(300px, 90vw, 500px);
+    background: rgba(0,0,0,0,8);
+    backdrop-filter: blur(20px);
+    color: whitesmoke;
+    padding: clamp(1.5rem, 100vw, 3rem);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+    border-radius: .5em;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 200ms ease-in-out opacity,
+                200ms ease-in-out transform;
+    position: relative;
+    
+}
+.popup button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    color: aliceblue;
+}
+.popup button:active {
+    transform: scale(.9);
+}
+
+.popup a {
+    position: absolute;
+    cursor: pointer;
+    right: 3rem;
+    top: 14rem;
+    user-select: none;
+    border: none;
+    border-radius: 20%;
+    border-style: groove;
+    font-size: 30px;
+    color: aliceblue;
+}
+.popup a:active {
+    transform: scale(.9);
+}
+
+.showPopup {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
 /*---------------------------------------------------------------------------------------------------*/
 
 #portfolio{
