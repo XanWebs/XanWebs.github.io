@@ -38,7 +38,63 @@
 </head>
 <body>
 
+<div class="popup-overlay" id="popup" onclick="closeOnClickOutside(event)">
+    <div class="popup-content" onclick="stopPropagation(event)">
+      <div class="popup-border"></div>
+      <div class="popup-title-box">
+        <h2 class="popup-title">PERHATIKAN!!</h2>
+        <span class="close-button" onclick="togglePopup()">&times;</span>
+      </div>
+      <p>Jangan lupa Subscribe Channel ChlleXanDev</p>
+      <p>Karna Subs itu gratis!.</p>
+      <p><img class="popup-image" src="yt.png" alt="Popup Image"></p>
+      <a class="subscribe-button" href="https://www.youtube.com/@ChlleXanDev" target="_blank" onclick="hidePopup()">Subscribe</a>
 
+      <label class="checkbox-label">
+        <input type="checkbox" class="checkbox-input" onchange="togglePopupVisibility(this)">
+        Jangan Tampilkan
+      </label>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      var popup = document.getElementById("popup");
+      popup.classList.toggle("active");
+    }
+
+    function togglePopupVisibility(checkbox) {
+      var popup = document.getElementById("popup");
+      if (checkbox.checked) {
+        popup.style.display = "";
+      } else {
+        popup.style.display = "";
+      }
+    }
+
+    function hidePopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "none";
+    }
+
+    function closeOnClickOutside(event) {
+      var popupContent = document.querySelector(".popup-content");
+      if (!popupContent.contains(event.target)) {
+        var popup = document.getElementById("popup");
+        popup.style.display = "none";
+      }
+    }
+
+    function stopPropagation(event) {
+      event.stopPropagation();
+    }
+
+    window.addEventListener("load", function() {
+      setTimeout(function() {
+        togglePopup();
+      }, 200); // Menyesuaikan waktu penundaan sebelum popup muncul (dalam milidetik)
+    });
+  </script>
     
     <!--Page loading animation-->
     <div class="loader-wrapper">
