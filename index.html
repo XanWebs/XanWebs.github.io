@@ -50,6 +50,9 @@
     
 </head>
 <body>
+
+
+    
     <!--Page loading animation-->
     <div class="loader-wrapper">
         <span class="pac-man"></span>
@@ -531,7 +534,30 @@
                 </div>
             </div>
         </div>
-        
+        <div class="popup">
+            <div class="popup-content">
+                <!-- <h1>ⓧ</h1> -->
+                <button id="close">&times;</button>
+                <h2>Perhatian!!</h2>
+                <h4>Don't Forget Subscribe My Youtube Channel</h4>
+                <img src="yt.png" alt="" width="500px" height="175px">
+                <a style="text-decoration:none" href="https://youtube.com/@ChlleXanDev">Go!</a>
+            </div>
+        </div>
+    
+        <script>
+            const popup = document.querySelector('.popup');
+            const x = document.querySelector('.popup-content button')
+    
+            window.addEventListener('load', () => {
+                popup.classList.add('showPopup');
+                popup.childNodes[1].classList.add('showPopup');
+            })
+            x.addEventListener('click', () => {
+                popup.classList.remove('showPopup');
+                popup.childNodes[1].classList.remove('showPopup');
+            })
+        </script>
     <!--Page loading animation when loading is complete-->
     <script>
         $(window).on("load", function(){
