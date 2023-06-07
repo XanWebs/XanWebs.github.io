@@ -93,6 +93,10 @@ body{
     .popup-title {
       color: #fff;
       margin: 0;
+      font-size:1em;
+    }
+    .popup-desk{
+        font-size:0.6em;
     }
 
     .close-button {
@@ -114,26 +118,27 @@ body{
 
     .checkbox-label {
       position: absolute;
-      bottom: 11px;
-      left: 11px;
+      bottom: 15px;
+      left: 16px;
       display: flex;
       align-items: center;
+      font-size:0.5em;
     }
 
     .checkbox-input {
-      margin-right: 5px;
+      margin-right: 4px;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      width: 16px;
-      height: 16px;
-      border: 2px solid #999;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #cacaca;
       border-radius: 3px;
-      background-color: #999;
+      background-color: #cacaca;
     }
 
     .checkbox-input:checked {
-      background-color: #777;
+      background-color: #131313;
     }
 
 /*---------------------------------------------------------------------------------------------------*/
