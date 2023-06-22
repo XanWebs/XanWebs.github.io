@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .form-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: popup 0.5s ease-in-out;
+    }
+    
+    .form-container input[type="password"] {
+      width: 94%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .form-container button:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      transition: left 0.3s ease-in-out;
+    }
+    
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+    
+    .form-container button:active:after {
+      left: 0;
+    }
+    
+    @keyframes popup {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    
+    /* Styles for Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    
+    .modal-content p {
+      margin-bottom: 40px;
+    }
+    
+    .modal-close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .modal-close:hover,
+    .modal-close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function validatePassword() {
+      var password = document.getElementById('password').value;
+      var validPassword = 'rifkyganteng'; // Ganti dengan kata sandi yang diinginkan
+      
+      if (password === validPassword) {
+        var modal = document.getElementById('success-modal');
+        var modalClose = document.getElementById('modal-close');
+        
+        modal.style.display = 'block';
+        modalClose.onclick = function() {
+          modal.style.display = 'none';
+          window.location.href = 'https://about.chllexandev.xyz/mlbb';
+        };
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = 'none';
+            window.location.href = 'https://about.chllexandev.xyz/mlbb';
+          }
+        };
+      } else {
+        alert('Kata sandi yang Anda masukkan salah. Silakan coba lagi.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Masukkan Kata Sandi</h1>
+    
+    <label for="password">Kata Sandi:</label>
+    <input type="password" id="password" required>
+    
+    <button onclick="validatePassword()">Submit</button>
+  </div>
+  
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="modal-close">&times;</span>
+      <h2>Sukses!</h2>
+      <p>Kata sandi berhasil dimasukkan. Anda akan dialihkan ke halaman berikutnya...</p>
+      <p>Silahkan Tekan Dimana saja, atau bisa menekan silang untuk beralih ke halaman berikutnya</p>
+    </div>
+  </div>
+</body>
+</html>
